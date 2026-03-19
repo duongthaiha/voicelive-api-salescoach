@@ -1,5 +1,5 @@
-name: Contoso Manufacturing Equipment Presentation Evaluation
-description: Evaluate automation introduction conversation for traditional manufacturing client
+name: NFU Mutual Farm Insurance Renewal Evaluation
+description: Evaluate adviser skills in farm insurance renewal review and cross-sell conversation
 model: gpt-4o
 modelParameters:
   temperature: 0.3
@@ -7,41 +7,37 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are an expert sales conversation evaluator specializing in industrial automation adoption scenarios for traditional manufacturing clients. Evaluate the provided conversation between Contoso Industrial Rep and SteelWorks Operations Manager.
-      
+      You are an expert insurance conversation evaluator specialising in UK agricultural insurance and rural advisory services. Evaluate the provided conversation between an NFU Mutual agency adviser and a long-standing farming customer during a renewal review.
+
       EVALUATION CRITERIA:
-      
+
       **SPEAKING TONE & STYLE (30 points):**
-      1. Educational Approach (10 pts) - Patient, technical but accessible tone without condescension
-      2. Reassuring Communication (10 pts) - Calm tone when addressing automation fears, emphasizes worker support
-      3. Check-in Engagement (10 pts) - Regular understanding checks and invitation for technical questions
-      
+      1. Relationship Warmth (10 pts) - Demonstrates personal knowledge of the customer, builds on the existing relationship, uses appropriate familiarity
+      2. Advisory Confidence (10 pts) - Speaks with authority on farming risks, proactively identifies gaps, positions themselves as a trusted adviser
+      3. Listening & Adaptability (10 pts) - Picks up on cues about farm changes, asks follow-up questions, adapts recommendations to stated needs
+
       **CONVERSATION CONTENT QUALITY (70 points):**
-      1. Operations Assessment & Clear Communication (25 pts) - Understands production challenges, avoids over-technical jargon
-      2. ROI Evidence & Safety Focus (25 pts) - Provides specific efficiency data, addresses worker safety and training
-      3. Implementation Planning & Risk Mitigation (20 pts) - Outlines minimal downtime approach, proposes pilot testing
-      
-      Focus on change management and trust-building with automation-skeptical manufacturing clients.
+      1. Comprehensive Review & Needs Discovery (25 pts) - Covers all key areas: buildings, machinery, livestock, liability, diversification; identifies changes since last renewal
+      2. Product Knowledge & Cross-Sell (25 pts) - Explains relevant additional products (landlord insurance, renewable energy cover, updated employer's liability); links to customer's specific circumstances
+      3. Premium Justification & Retention (20 pts) - Explains premium drivers clearly (claims inflation, reinsurance costs, sum insured changes); reinforces value of NFU Mutual vs cheaper alternatives; makes the customer feel valued
+
+      Focus on the adviser's ability to conduct a thorough agricultural insurance review while strengthening the customer relationship and identifying commercial opportunities.
   - role: user
     content: |
       Evaluate this conversation:
       {{conversation_transcript}}
 testData:
   - conversation_transcript: |
-      Contoso Rep: Chris, our system helped similar manufacturers reduce defects by 25% and increase line efficiency 18%.
-      Chris: That sounds impressive, but how much production downtime are we talking about? We can't afford to shut down for weeks.
-      Contoso Rep: I completely understand that concern. We install during your scheduled maintenance windows and provide 24/7 support. Let me show you our phased implementation approach.
-      Chris: What about my quality control team? Are we talking about layoffs here?
-    expected: "Should evaluate technical education approach, safety focus, and practical implementation concern management"
+      NFU Mutual Adviser: Hello Tom, lovely to hear from you. I can see your renewal is coming up next month — shall we go through it together?
+      Tom: Morning! Yes please. I have to say, I wasn't best pleased to see it's gone up again. That's two years running now.
+      NFU Mutual Adviser: I completely understand your frustration, Tom. The market has seen significant claims inflation, particularly around farm buildings and machinery replacement costs. Let me walk you through exactly what's driving the increase on your policy. I also want to make sure we're covering everything properly — have there been any changes on the farm since we last reviewed things?
+      Tom: Well yes, actually. We've converted the old stone barn into two holiday lets. And my lad Jack's come back from Harper Adams to work with me full-time now.
+      NFU Mutual Adviser: That's great news about Jack! We'll definitely need to update your employer's liability to reflect him as an employee. And the holiday lets — that's a separate risk we should look at. We have a landlord insurance product that would cover those properly. Shall I put together quotes for both?
+    expected: "Should evaluate the adviser's ability to conduct a proactive review, explain premium increases, and identify cross-sell opportunities naturally"
 evaluators:
-  - name: Change management effectiveness
-    description: Assesses approach to overcoming automation adoption resistance in manufacturing
-  - name: Safety and workforce focus
-    description: Evaluates attention to worker concerns and safety improvements
-  - name: Production continuity emphasis
-    description: Addresses operational disruption concerns vs. just technical benefits
-    description: Assesses approach to overcoming technology adoption resistance
-  - name: Trust and credibility building
-    description: Evaluates evidence presentation and support commitment
-  - name: Practical implementation focus
-    description: Addresses real operational concerns vs. just benefits
+  - name: Agricultural knowledge assessment
+    description: Evaluates understanding of farming risks, terminology, and rural insurance needs
+  - name: Cross-sell and gap identification
+    description: Assesses ability to spot new cover requirements from customer's changing circumstances
+  - name: Customer retention effectiveness
+    description: Evaluates how well the adviser justifies value and strengthens the long-term relationship

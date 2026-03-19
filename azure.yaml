@@ -1,4 +1,4 @@
-name: voicelab-sales-training
+name: nfum-customer-service-training
 metadata:
   template: azd-init@1.18.1
 infra:

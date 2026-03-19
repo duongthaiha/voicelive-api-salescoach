@@ -213,7 +213,7 @@ export function AssessmentPanel({ open, assessment, onClose }: Props) {
                   <CardHeader
                     header={
                       <Text size={500} weight="semibold">
-                        🎯 AI Sales Assessment
+                        🎯 AI Performance Assessment
                       </Text>
                     }
                   />

@@ -1,7 +1,7 @@
 <!--
 ---
-name: Voice Live API Sales Coach (Python + React)
-description: A demo application showcasing AI-powered voice training for sales professionals using Azure Voice Live API and Azure AI services.
+name: NFU Mutual Customer Service Training (Python + React)
+description: An AI-powered voice training application for NFU Mutual customer service advisers using Azure Voice Live API and Azure AI services.
 languages:
 - python
 - typescript
@@ -17,27 +17,27 @@ urlFragment: voicelive-api-salescoach
 ---
 -->
 <p align="center">
-   <h1 align="center">Voice Live API: AI Sales Coach</h1>
+   <h1 align="center">NFU Mutual: AI Customer Service Training</h1>
 </p>
-<p align="center">A demo application showcasing AI-powered voice training for sales professionals, built on Azure.</p>
+<p align="center">An AI-powered voice training application for NFU Mutual customer service advisers, built on Azure.</p>
 <p align="center">
    <a href="https://github.com/Azure-Samples/voicelive-api-salescoach/blob/main/LICENSE.md"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" style="height:27px; vertical-align:middle;"/></a>
    <a href="https://github.com/Azure-Samples/voicelive-api-salescoach/actions/workflows/lint-and-test.yml"><img alt="Build Status" src="https://github.com/Azure-Samples/voicelive-api-salescoach/actions/workflows/lint-and-test.yml/badge.svg" style="height:27px; vertical-align:middle;"/></a>&nbsp;
    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fvoicelive-api-salescoach%2Frefs%2Fheads%2Fmain%2Finfra%2Fdeployment.json"><img src="https://aka.ms/deploytoazurebutton" alt="Deploy to Azure" style="height:27px; vertical-align:middle;"/></a>&nbsp;
 </p>
 
-![Voice Live API Salescoach in Action](docs/assets/preview.png)
+![NFU Mutual Customer Service Training in Action](docs/assets/preview.png)
 
 ---
 
 ## Overview
 
-Voice Live API Salescoach is a demo application showcasing how AI-based training could be used in sales education using Azure AI services. Practice real-world sales scenarios with AI-powered virtual customers, receive instant feedback on your performance, and improve your sales skills through immersive voice conversations.
+NFU Mutual Customer Service Training is an AI-powered application that helps NFU Mutual advisers practise customer interactions using Azure AI services. Handle realistic insurance scenarios — from motor enquiries and home insurance complaints to farm renewal discussions — with AI-powered virtual customers, receive instant feedback on your performance, and improve your customer service skills through immersive voice conversations.
 
 ### Features
 
-- **Real-time Voice Conversations** - Practice sales calls with AI agents that respond naturally using Azure Voice Live API
-- **Performance Analysis** - Get detailed feedback on your conversation skills
+- **Real-time Voice Conversations** - Practise customer calls with AI customers that respond naturally using Azure Voice Live API
+- **Performance Analysis** - Get detailed feedback on your conversation skills including empathy, product knowledge, and complaint handling
 - **Pronunciation Assessment** - Improve your speaking clarity and confidence with Azure Speech Services
 - **Scoring System** - Track your progress with metrics
 
@@ -45,21 +45,21 @@ Voice Live API Salescoach is a demo application showcasing how AI-based training
 
 ## Demo
 
-See the Voice Live API Salescoach in action:
+See the NFU Mutual Customer Service Training tool in action:
 
 https://github.com/user-attachments/assets/904f1555-6981-4780-ae64-c5757337bcad
 
 ### How It Works
 
-1. **Choose a Scenario** - Select from various industry-specific sales situations
+1. **Choose a Scenario** - Select from NFU Mutual insurance customer service situations
 2. **Start the Conversation** - Click the microphone to start your simulation
 3. **Engage with AI** - The virtual customer responds realistically based on the scenario
 4. **Receive Feedback** - Get instant analysis on your performance including:
-   - Speaking tone and style
-   - Content quality
-   - Needs assessment
-   - Value proposition delivery
-   - Objection handling skills
+   - Speaking tone and empathy
+   - Product knowledge
+   - Needs assessment and discovery
+   - Complaint handling and de-escalation
+   - Customer retention skills
 
 ## Getting Started
 

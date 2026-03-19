@@ -3,7 +3,7 @@
 #  Licensed under the MIT License. See LICENSE in the project root for license information.
 # --------------------------------------------------------------------------------------------
 
-"""Flask application for the upskilling agent."""
+"""Flask application for the NFU Mutual customer service training agent."""
 
 import asyncio
 import json

@@ -3,7 +3,7 @@
 #  Licensed under the MIT License. See LICENSE in the project root for license information.
 # --------------------------------------------------------------------------------------------
 
-"""Configuration management for the upskilling agent application."""
+"""Configuration management for the NFU Mutual customer service training application."""
 
 import os
 from typing import Any, Dict

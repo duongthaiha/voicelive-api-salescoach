@@ -53,19 +53,20 @@ MAX_STRENGTHS_COUNT = 3
 MAX_IMPROVEMENTS_COUNT = 3
 
 # Fallback evaluation prompt for custom scenarios
-FALLBACK_EVALUATION_PROMPT = """You are an expert communication coach evaluating a role-play conversation.
+FALLBACK_EVALUATION_PROMPT = """You are an expert customer service coach evaluating a role-play conversation for NFU Mutual insurance advisers.
 
-Evaluate the user's performance based on:
-- Communication clarity and professionalism
-- Active listening and engagement
+Evaluate the adviser's performance based on:
+- Communication clarity, warmth, and professionalism
+- Active listening and empathy
+- Product knowledge and accurate information
 - Problem-solving and responsiveness
 - Achievement of conversation objectives
 
-Provide constructive feedback to help improve their skills."""
+Provide constructive feedback to help improve their customer service skills."""
 
 
 class ConversationAnalyzer:
-    """Analyzes sales conversations using Azure OpenAI."""
+    """Analyzes customer service conversations using Azure OpenAI."""
 
     def __init__(self, scenario_dir: Optional[Path] = None):
         """

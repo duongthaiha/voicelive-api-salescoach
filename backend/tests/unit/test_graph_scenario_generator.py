@@ -52,7 +52,7 @@ class TestGraphScenarioGenerator:
         result = generator.generate_scenario_from_graph({})
 
         assert result["id"] == "graph-generated"
-        assert result["name"] == "Your Personalized Sales Scenario"
+        assert result["name"] == "Your Personalised Customer Scenario"
         assert "generated_from_graph" in result
         assert result["generated_from_graph"] is True
 
@@ -86,7 +86,7 @@ class TestGraphScenarioGenerator:
             result = generator.generate_scenario_from_graph(graph_data)
 
             assert result["id"] == "graph-generated"
-            assert result["name"] == "Your Personalized Sales Scenario"
+            assert result["name"] == "Your Personalised Customer Scenario"
             assert len(result["messages"]) == 1
             assert "content" in result["messages"][0]
 
@@ -117,8 +117,7 @@ class TestGraphScenarioGenerator:
         result = generator._create_graph_scenario_content([])
 
         # Should return fallback content
-        assert "Jordan Martinez" in result
-        assert "TechCorp Solutions" in result
+        assert "Emily Clarke" in result
 
     def test_create_graph_scenario_content_no_openai_client(self):
         """Test scenario content creation with no OpenAI client."""
@@ -129,8 +128,7 @@ class TestGraphScenarioGenerator:
         result = generator._create_graph_scenario_content(meetings)
 
         # Should return fallback content
-        assert "Jordan Martinez" in result
-        assert "TechCorp Solutions" in result
+        assert "Emily Clarke" in result
 
     # pylint: disable=R0801
     @patch("src.services.graph_scenario_generator.config")
@@ -201,11 +199,8 @@ class TestGraphScenarioGenerator:
         generator = GraphScenarioGenerator()
         result = generator._get_fallback_scenario_content()
 
-        assert "Jordan Martinez" in result
-        assert "TechCorp Solutions" in result
-        assert "BEHAVIORAL GUIDELINES" in result
-        assert "YOUR CHARACTER PROFILE" in result
-        assert "KEY CONCERNS TO RAISE" in result
+        assert "Emily Clarke" in result
+        assert "NFU Mutual" in result
 
     def test_generate_scenario_truncated_description(self):
         """Test scenario generation with long description that gets truncated."""

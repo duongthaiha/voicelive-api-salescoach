@@ -1,5 +1,5 @@
-name: Contoso Distributor Meeting Evaluation
-description: Evaluate sales conversation quality for new vape product portfolio presentation scenario
+name: NFU Mutual Motor Insurance Enquiry Evaluation
+description: Evaluate agent conversation quality for motor insurance new business enquiry
 model: gpt-4o
 modelParameters:
   temperature: 0.3
@@ -7,20 +7,20 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are an expert sales conversation evaluator specializing in B2B vape industry interactions. Evaluate the provided sales conversation between a Contoso Key Account Manager and MegaDistrib Commercial Director.
-      
+      You are an expert insurance conversation evaluator specialising in UK personal lines insurance. Evaluate the provided conversation between an NFU Mutual agency adviser and a prospective motor insurance customer.
+
       EVALUATION CRITERIA:
-      
+
       **SPEAKING TONE & STYLE (30 points):**
-      1. Professional Tone (10 pts) - Confident, consultative, appropriate business language
-      2. Active Listening Indicators (10 pts) - Acknowledges concerns, asks clarifying questions
-      3. Engagement Quality (10 pts) - Encourages dialogue, responds thoughtfully to input
-      
+      1. Professional Warmth (10 pts) - Friendly, welcoming tone that reflects NFU Mutual's local personal service ethos
+      2. Active Listening (10 pts) - Acknowledges customer's concerns, asks clarifying questions about their needs
+      3. Engagement Quality (10 pts) - Builds rapport, shows genuine interest in the customer's circumstances
+
       **CONVERSATION CONTENT QUALITY (70 points):**
-      1. Needs Assessment & Understanding (25 pts) - Demonstrates understanding of vape distributor challenges and regulatory environment
-      2. Value Proposition with Evidence (25 pts) - Clear benefits backed by data, examples, or compelling reasoning for vape market
-      3. Objection Handling & Problem Solving (20 pts) - Addresses concerns constructively with solutions, including compliance considerations
-      
+      1. Needs Assessment & Discovery (25 pts) - Asks about vehicles, usage, driving history, household needs; identifies multi-car and farm-use requirements
+      2. Product Knowledge & Value Articulation (25 pts) - Clearly explains NFU Mutual motor cover features, claims process, and what differentiates from comparison-site insurers
+      3. Objection Handling & Next Steps (20 pts) - Addresses cost concerns with value-based responses, explains member benefits, provides clear next steps for quotation
+
       Provide scores (0-max points) and specific feedback for improvement.
   - role: user
     content: |
@@ -28,21 +28,16 @@ messages:
       {{conversation_transcript}}
 testData:
   - conversation_transcript: |
-      Contoso KAM: Good morning Alex, thank you for taking time to meet today. I wanted to discuss our new premium vape line opportunity.
-      Alex: Morning. I'm interested to hear what you have in mind, though we're navigating some tight regulations and space constraints right now.
-      Contoso KAM: I understand the regulatory landscape is complex. Our research shows 28% of adult vapers want premium experiences - that's €3.2M annually across your network, and our products meet all current compliance standards.
-      Alex: That's promising, but won't this just take sales from our existing vape products? And what about training retailers on the new compliance requirements?
-      Contoso KAM: Actually, 82% of premium vape purchases are incremental to the category. We provide comprehensive compliance training and can start with your top 100 outlets with dedicated merchandising support.
-    expected: "Should provide detailed scoring and constructive feedback on both tone/style and content quality for vape industry context"
+      NFU Mutual Adviser: Good morning, thank you for calling NFU Mutual. My name is Sarah, how can I help you today?
+      James: Morning Sarah. I'm James Hartley, I farm over near Clun. I'm looking into motor insurance — I've got a Land Rover and a family car. Currently with one of the big comparison-site insurers but the claims experience was shocking.
+      NFU Mutual Adviser: I'm sorry to hear that, James. We hear that quite often from customers who come to us. Can I ask what vehicles you need covered and how you use them? That way I can make sure we look at the right options for you.
+      James: The Defender is used on and off the farm, and my wife drives a Ford Focus for her commute. Can you do both on one policy?
+      NFU Mutual Adviser: We can certainly look at insuring both vehicles. We don't do a traditional multi-car policy, but we can often offer preferential rates when you hold multiple policies with us. Let me take some details and put together quotes for both.
+    expected: "Should provide detailed scoring and constructive feedback on needs assessment, product explanation, and the adviser's ability to build trust"
 evaluators:
   - name: Comprehensive evaluation coverage
-    description: Addresses all evaluation criteria systematically for vape industry
+    description: Addresses all evaluation criteria systematically for insurance advisory context
   - name: Specific actionable feedback
-    description: Provides concrete suggestions for improvement in vape market context
-  - name: Balanced scoring approach
-    description: Fair assessment of both strengths and areas for development
-    description: Addresses all evaluation criteria systematically
-  - name: Specific actionable feedback
-    description: Provides concrete suggestions for improvement
+    description: Provides concrete suggestions for improvement in insurance customer engagement
   - name: Balanced scoring approach
     description: Fair assessment of both strengths and areas for development

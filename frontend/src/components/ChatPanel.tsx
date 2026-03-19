@@ -162,7 +162,7 @@ export function ChatPanel({
           onClick={onAnalyze}
           disabled={!canAnalyze}
         >
-          Analyze Performance
+          Analyse Performance
         </Button>
       </div>
     </Card>

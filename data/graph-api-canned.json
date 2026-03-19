@@ -3,8 +3,8 @@
     "value": [
         {
             "id": "evt-001",
-            "subject": "AI Foundry Introduction & Integration Options - Contoso",
-            "bodyPreview": "Intro to Azure AI Foundry, deployment patterns, and Contoso integration scenarios for customer service.",
+            "subject": "Motor Insurance Team Briefing — New Product Features",
+            "bodyPreview": "Briefing on updated motor insurance cover features, including enhanced courtesy car provision and new telematics options for young drivers.",
             "start": {
                 "dateTime": "2025-09-08T09:00:00Z",
                 "timeZone": "UTC"
@@ -14,27 +14,27 @@
                 "timeZone": "UTC"
             },
             "location": {
-                "displayName": "Microsoft Teams Meeting"
+                "displayName": "NFU Mutual Agency Office"
             },
-            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_ai_foundry_demo",
+            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_motor_briefing",
             "organizer": {
                 "emailAddress": {
-                    "name": "Aymen Furter",
-                    "address": "aymen.furter@microsoft.com"
+                    "name": "Regional Manager",
+                    "address": "regional.manager@nfumutual.co.uk"
                 }
             },
             "attendees": [
                 {
                     "emailAddress": {
-                        "name": "Sarah Johnson",
-                        "address": "sarah.johnson@contoso.com"
+                        "name": "Sarah Mitchell",
+                        "address": "sarah.mitchell@nfumutual.co.uk"
                     },
                     "type": "required"
                 },
                 {
                     "emailAddress": {
-                        "name": "Michael Chen",
-                        "address": "michael.chen@contoso.com"
+                        "name": "David Hargreaves",
+                        "address": "david.hargreaves@nfumutual.co.uk"
                     },
                     "type": "required"
                 }
@@ -42,8 +42,8 @@
         },
         {
             "id": "evt-002",
-            "subject": "Voice Live API - Technical Deep Dive for Contoso",
-            "bodyPreview": "Deep dive on Voice Live API: real-time voice processing, integration patterns for Contoso's contact center, and security considerations.",
+            "subject": "Home Insurance Claims Process — Customer Service Review",
+            "bodyPreview": "Review of home insurance claims journey, common customer pain points, and updated FCA Consumer Duty requirements for claims handling.",
             "start": {
                 "dateTime": "2025-09-09T14:00:00Z",
                 "timeZone": "UTC"
@@ -55,25 +55,25 @@
             "location": {
                 "displayName": "Microsoft Teams Meeting"
             },
-            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_voice_api_deepdive",
+            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_claims_review",
             "organizer": {
                 "emailAddress": {
-                    "name": "Aymen Furter",
-                    "address": "aymen.furter@microsoft.com"
+                    "name": "Claims Team Lead",
+                    "address": "claims.lead@nfumutual.co.uk"
                 }
             },
             "attendees": [
                 {
                     "emailAddress": {
-                        "name": "David Thompson",
-                        "address": "david.thompson@contoso.com"
+                        "name": "Emma Collins",
+                        "address": "emma.collins@nfumutual.co.uk"
                     },
                     "type": "required"
                 },
                 {
                     "emailAddress": {
-                        "name": "Lisa Wang",
-                        "address": "lisa.wang@contoso.com"
+                        "name": "James Barton",
+                        "address": "james.barton@nfumutual.co.uk"
                     },
                     "type": "required"
                 }
@@ -81,8 +81,8 @@
         },
         {
             "id": "evt-003",
-            "subject": "AI Foundry Integration Planning — Contoso Pilot",
-            "bodyPreview": "Workshop to map Contoso pilot requirements to AI Foundry components, infra needs, and timeline for a proof-of-concept.",
+            "subject": "Farm Insurance Renewal Season — Preparation Workshop",
+            "bodyPreview": "Workshop to prepare for autumn farm renewal season, covering premium drivers, diversification cover, and cross-sell opportunities.",
             "start": {
                 "dateTime": "2025-09-15T08:30:00Z",
                 "timeZone": "UTC"
@@ -92,27 +92,27 @@
                 "timeZone": "UTC"
             },
             "location": {
-                "displayName": "Contoso HQ / Teams"
+                "displayName": "NFU Mutual Regional Office / Teams"
             },
-            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_foundry_planning",
+            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_farm_renewals",
             "organizer": {
                 "emailAddress": {
-                    "name": "Aymen Furter",
-                    "address": "aymen.furter@microsoft.com"
+                    "name": "Agricultural Specialist",
+                    "address": "agri.specialist@nfumutual.co.uk"
                 }
             },
             "attendees": [
                 {
                     "emailAddress": {
-                        "name": "Product Owner - Contoso",
-                        "address": "po@contoso.com"
+                        "name": "Agency Manager — Cotswolds",
+                        "address": "agency.cotswolds@nfumutual.co.uk"
                     },
                     "type": "required"
                 },
                 {
                     "emailAddress": {
-                        "name": "Infra Lead - Contoso",
-                        "address": "infra.lead@contoso.com"
+                        "name": "Agency Manager — Yorkshire",
+                        "address": "agency.yorkshire@nfumutual.co.uk"
                     },
                     "type": "required"
                 }
@@ -120,8 +120,8 @@
         },
         {
             "id": "evt-004",
-            "subject": "AI Voice Live API Pilot Kickoff - Contoso",
-            "bodyPreview": "Kickoff for Voice Live API pilot: success criteria, POC scope, test scenarios, and next steps.",
+            "subject": "Complaint Handling Best Practice — Training Session",
+            "bodyPreview": "Training on complaint handling best practice including FCA requirements, de-escalation techniques, and turning complaints into retention opportunities.",
             "start": {
                 "dateTime": "2025-09-22T13:00:00Z",
                 "timeZone": "UTC"
@@ -133,18 +133,18 @@
             "location": {
                 "displayName": "Microsoft Teams Meeting"
             },
-            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_voice_pilot_kickoff",
+            "onlineMeetingUrl": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_complaints_training",
             "organizer": {
                 "emailAddress": {
-                    "name": "Aymen Furter",
-                    "address": "aymen.furter@microsoft.com"
+                    "name": "Customer Experience Manager",
+                    "address": "cx.manager@nfumutual.co.uk"
                 }
             },
             "attendees": [
                 {
                     "emailAddress": {
-                        "name": "Contoso Pilot Team",
-                        "address": "pilot.team@contoso.com"
+                        "name": "Customer Service Team",
+                        "address": "cs.team@nfumutual.co.uk"
                     },
                     "type": "required"
                 }

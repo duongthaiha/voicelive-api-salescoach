@@ -81,7 +81,7 @@ class GraphScenarioGenerator:
 
         return {
             "id": "graph-generated",
-            "name": "Your Personalized Sales Scenario",
+            "name": "Your Personalised Customer Scenario",
             "description": first_sentence,
             "messages": [{"content": scenario_content}],
             "model": config["model_deployment_name"],
@@ -110,8 +110,9 @@ class GraphScenarioGenerator:
                 {
                     "role": "system",
                     "content": (
-                        "You are an expert at creating realistic business role-play scenarios for sales training. "
-                        "Generate engaging, professional scenarios that help salespeople prepare for real meetings."
+                        "You are an expert at creating realistic role-play scenarios for insurance customer service training at NFU Mutual. "
+                        "Generate engaging, professional scenarios that help advisers prepare for real customer interactions "
+                        "including enquiries, complaints, renewals, and claims discussions."
                     ),
                 },
                 {"role": "user", "content": prompt},
@@ -127,62 +128,59 @@ class GraphScenarioGenerator:
     def _build_scenario_generation_prompt(self, meetings: List[Dict[str, Any]]) -> str:
         """Build the prompt for OpenAI scenario generation."""
         return (
-            "Generate a role-play scenario to help a salesperson prepare for their upcoming client meetings. "
+            "Generate a role-play scenario to help an NFU Mutual adviser prepare for upcoming customer interactions. "
             "Based on their calendar, the following meetings are scheduled:\n\n"
             f"{self._format_meeting_list(meetings)}\n\n"
-            "Create a realistic sales practice scenario for an upcoming customer meeting using the following "
+            "Create a realistic customer service practice scenario for an upcoming interaction using the following "
             "structure:\n\n"
-            "1. **Context**: Start with a quick summary.\n"
-            "2. **Character**: Define the person the trainee will interact with (name, title, company background). "
-            "The company description should include industry, size, and strategic focus.\n"
-            "3. **Behavioral Guidelines (Act Human)**: Outline how the character should behave in conversation "
-            "(e.g., open, skeptical, budget-conscious, visionary).\n"
-            "4. **Character Profile**: Provide background experience and current responsibilities that shape the "
-            "character's perspective.\n"
-            "5. **Key Concerns**: List 2–3 specific business concerns, objections, or challenges the character should "
-            "raise during the conversation. These should be realistic for their role and company context.\n"
-            "6. **Instruction**: End by telling the AI to roleplay as this character, responding naturally and "
-            "professionally, raising concerns where relevant.\n\n"
+            "1. **Context**: Start with a quick summary of the customer situation.\n"
+            "2. **Character**: Define the customer the trainee will interact with (name, background, insurance needs). "
+            "Include relevant personal details such as occupation, property type, and family circumstances.\n"
+            "3. **Behavioral Guidelines (Act Human)**: Outline how the customer should behave in conversation "
+            "(e.g., friendly, frustrated, anxious, confused, loyal).\n"
+            "4. **Character Profile**: Provide background that shapes the customer's perspective and insurance needs.\n"
+            "5. **Key Concerns**: List 2–3 specific concerns, questions, or issues the customer should "
+            "raise during the conversation. These should be realistic for UK insurance customers.\n"
+            "6. **Instruction**: End by telling the AI to roleplay as this customer, responding naturally.\n\n"
             "**Example output:**\n\n"
-            "Discovery call with ContosoCare on SaaS platform.\n\n"
-            "You are **Sarah Lee, Director of Patient Experience at ContosoCare**, a healthcare provider focused on "
-            "delivering modern, patient-centered digital solutions while navigating strict compliance requirements.\n\n"
+            "Renewal discussion with a long-standing home insurance customer.\n\n"
+            "You are **Margaret Davies, a 62-year-old retired teacher** living in a detached period property in "
+            "rural Herefordshire. You've been an NFU Mutual customer for 18 years.\n\n"
             "**BEHAVIORAL GUIDELINES (Act Human):**\n\n"
-            "* Speak conversationally, avoid jargon overload\n"
-            "* Show interest in how technology solves real problems\n"
-            "* Ask open-ended questions about business outcomes\n\n"
+            "* Speak warmly but be direct about concerns\n"
+            "* Reference your loyalty as a long-standing customer\n"
+            "* Show concern about rising costs on a fixed retirement income\n\n"
             "**YOUR CHARACTER PROFILE:**\n\n"
-            "* 12 years in healthcare operations and patient engagement\n"
-            "* Recently led ContosoCare's shift to hybrid care models (in-person + telehealth)\n"
-            "* Practical, budget-aware, but open to innovation if it improves patient satisfaction\n\n"
+            "* Retired secondary school headteacher, lives alone since husband passed\n"
+            "* Grade II listed cottage with thatched roof — specialist cover needed\n"
+            "* Values the personal service from her local NFU Mutual agency\n\n"
             "**KEY CONCERNS TO RAISE:**\n\n"
-            "1. How does your platform handle HIPAA/GDPR compliance without slowing workflows?\n"
-            "2. Our clinicians already struggle with multiple tools — how will this integrate with existing EMR "
-            "systems?\n"
-            "3. Budgets are tight — what ROI can we realistically expect in the first year?\n\n"
-            "**Respond naturally as Sarah Lee would, maintaining professional tone while expressing genuine business "
-            "concerns.**\n\n"
+            "1. Premium has increased again — can you explain why and is there anything that can be done?\n"
+            "2. The cottage needs rewiring — will this affect my cover?\n"
+            "3. I've heard about flood risk in my area — am I properly covered?\n\n"
+            "**Respond naturally as Margaret would, maintaining a warm but concerned tone while expressing genuine "
+            "questions about her insurance cover.**\n\n"
             "Directly start with the summary (No 'Context:')\n"
         )
 
     def _get_fallback_scenario_content(self) -> str:
         """Fallback scenario content when generation fails."""
         return (
-            "You are Jordan Martinez, Operations Director at TechCorp Solutions, a mid-size technology "
-            "consulting firm with 200+ employees. You're evaluating new software solutions to improve team "
-            "collaboration and productivity.\n\n"
+            "You are Emily Clarke, a 38-year-old small business owner running a village pub and bed & breakfast "
+            "in the Yorkshire Dales. You're calling NFU Mutual to discuss your business insurance renewal and "
+            "ask about additional cover for a new outdoor events area you've added.\n\n"
             "BEHAVIORAL GUIDELINES (Act Human):\n"
-            "- Show genuine interest but maintain professional skepticism\n"
-            "- Ask clarifying questions when information seems unclear\n"
-            '- Take natural pauses to "think" before responding to complex proposals\n\n'
+            "- Be friendly and chatty but focused on getting clear answers\n"
+            "- Reference your experience running the business and dealing with seasonal challenges\n"
+            '- Show genuine concern about being properly covered for public liability\n\n'
             "YOUR CHARACTER PROFILE:\n"
-            "- 10+ years in operations and technology management\n"
-            "- Results-driven but relationship-focused\n"
-            "- Currently managing remote and hybrid teams\n\n"
+            "- Took over the family pub 8 years ago, added B&B rooms and now outdoor events\n"
+            "- Employs 6 staff including seasonal workers\n"
+            "- Values the personal service from her local NFU Mutual agent\n\n"
             "KEY CONCERNS TO RAISE:\n"
-            "1. Integration complexity with existing systems and workflows\n"
-            "2. Change management and user adoption challenges\n"
-            "3. Total cost of ownership including training and support\n\n"
-            "Respond naturally as Jordan would, maintaining professional tone while expressing genuine business "
-            "concerns about technology investments and team productivity.\n"
+            "1. Does my current policy cover the new outdoor marquee and events area?\n"
+            "2. I'm hiring temporary staff for summer — is my employer's liability adequate?\n"
+            "3. A customer slipped on the patio last month — how would a liability claim work?\n\n"
+            "Respond naturally as Emily would, maintaining a warm and practical tone while expressing genuine "
+            "concerns about her business insurance cover and customer safety.\n"
         )

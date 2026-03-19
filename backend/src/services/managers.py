@@ -3,7 +3,7 @@
 #  Licensed under the MIT License. See LICENSE in the project root for license information.
 # --------------------------------------------------------------------------------------------
 
-"""Business logic managers for the upskilling agent application."""
+"""Business logic managers for the NFU Mutual customer service training application."""
 
 import logging
 import uuid

@@ -164,7 +164,7 @@ export function ScenarioList({
         const generated = await api.generateGraphScenario()
         const personalizedScenario = {
           ...generated,
-          name: 'Personalized Scenario',
+          name: 'Personalised Scenario',
           description: generated.description.split('.')[0] + '.',
         }
         setGeneratedScenario(personalizedScenario)
@@ -201,7 +201,7 @@ export function ScenarioList({
   return (
     <>
       <Text className={styles.header} size={500} weight="semibold">
-        Select Training Scenario
+        Select Customer Service Scenario
       </Text>
 
       {/* Server-side scenarios */}
@@ -340,7 +340,7 @@ export function ScenarioList({
           onClick={() => onStart(selectedAvatar)}
           size="large"
         >
-          Start Training
+          Start Session
         </Button>
       </div>
     </>
