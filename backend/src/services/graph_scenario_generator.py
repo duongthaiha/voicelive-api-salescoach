@@ -8,6 +8,7 @@
 import logging
 from typing import Dict, Any, Optional, List
 
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from openai import AzureOpenAI
 
 from src.config import config
@@ -23,20 +24,34 @@ class GraphScenarioGenerator:
         self.openai_client = self._initialize_openai_client()
 
     def _initialize_openai_client(self) -> Optional[AzureOpenAI]:
-        """Initialize the Azure OpenAI client for scenario generation."""
+        """Initialize the Azure OpenAI client for scenario generation.
+
+        Uses API key if configured, otherwise falls back to managed identity
+        via DefaultAzureCredential.
+        """
         try:
             endpoint = config["azure_openai_endpoint"]
-            api_key = config["azure_openai_api_key"]
 
-            if not endpoint or not api_key:
+            if not endpoint:
                 logger.warning("Azure OpenAI not configured for scenario generation")
                 return None
 
-            return AzureOpenAI(
-                api_version=config["api_version"],
-                azure_endpoint=endpoint,
-                api_key=api_key,
-            )
+            api_key = config["azure_openai_api_key"]
+            if api_key:
+                return AzureOpenAI(
+                    api_version=config["api_version"],
+                    azure_endpoint=endpoint,
+                    api_key=api_key,
+                )
+            else:
+                token_provider = get_bearer_token_provider(
+                    DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default"
+                )
+                return AzureOpenAI(
+                    api_version=config["api_version"],
+                    azure_endpoint=endpoint,
+                    azure_ad_token_provider=token_provider,
+                )
         except Exception as e:
             logger.error("Failed to initialize OpenAI client for scenarios: %s", e)
             return None

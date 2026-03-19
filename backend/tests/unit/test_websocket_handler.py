@@ -3,6 +3,7 @@
 from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
+from azure.core.credentials import AzureKeyCredential
 
 from src.services.websocket_handler import VoiceProxyHandler
 
@@ -195,14 +196,17 @@ class TestVoiceProxyHandler:
         credential = handler._get_credential()
 
         assert credential is not None
+        assert isinstance(credential, AzureKeyCredential)
         assert credential.key == "test-api-key"
 
+    @patch("src.services.websocket_handler.DefaultAzureCredential")
     @patch("src.services.websocket_handler.config")
-    def test_get_credential_missing_key(self, mock_config):
-        """Test getting credential with missing API key."""
+    def test_get_credential_missing_key(self, mock_config, mock_default_cred):
+        """Test getting credential with missing API key falls back to DefaultAzureCredential."""
         mock_config.get.return_value = None
 
         handler = VoiceProxyHandler(Mock())
         credential = handler._get_credential()
 
-        assert credential is None
+        assert credential is not None
+        mock_default_cred.assert_called_once()
